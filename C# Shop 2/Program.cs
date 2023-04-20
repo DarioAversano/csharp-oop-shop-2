@@ -5,30 +5,41 @@ Console.WriteLine("Hello, World!");
 
 // DEFINISCO IL MIO SHOP
 
-Shop negozio = new Shop("Di tutto e di più", "Palermo", "Via Roma", 89, "Alimentare");
+Shop alimentari1 = new Shop("Di tutto e di più", "Palermo", "Via Roma", 89, "Alimentare");
 
 // DEFINISCO I PRODOTTI CHE IL MIO SHOP TRATTA
-itemShop insalata = new itemShop("Insalata");
-itemShop pollo = new itemShop("Pollo");
+Prodotto insalata = new Prodotto("Insalata");
+Prodotto pollo = new Prodotto("Pollo");
 
 // DEFINISCO LE CATEGOIRE PER I MIEI PRODOTTO
 Category verdura = new Category("Verdura", "Insalata verde");
 Category carne = new Category("Carne", "Pollo allevato a terra");
+Category bevanda = new Category("Acqua","Bottiglia frizzante");
 
 // ASSOCIO I PRODOTTI CON LE LORO CATEGORIE
-insalata.addCaetogy(verdura);
-pollo.addCaetogy(carne);
+insalata.addCategory(verdura);
+pollo.addCategory(carne);
 
-negozio.addItem(insalata);
-negozio.addItem(pollo);
+alimentari1.addItem(insalata);
+alimentari1.addItem(pollo);
 
 
-Console.WriteLine(negozio.InfoShop());
+/*Console.WriteLine(negozio.InfoShop());*/
 
+
+Acqua acqua = new Acqua("Lete", 18, 5, "Napoli");
+Console.WriteLine(acqua.GetLitri());
+
+Console.WriteLine(acqua.GetLitri());
+
+Console.WriteLine(acqua.GetLitri());
+
+acqua.addCategory(bevanda);
+
+alimentari1.addItem(acqua);
+Console.WriteLine(alimentari1.InfoShop());
 /*
-A partire da quanto già fatto fino a ieri dove vi era stato chiesto di creare una classe Prodotto generica per gestire un generico prodotto dello Shop,
-vi chiedo di essere più specifichi e di creare le sottoclassi opportune di alcuni prodotti che potremmo identificare nel nostro shop. In particolare 
-immaginiamo che nel nostro shop possiamo commerciare le seguenti tipologie di prodotto:
+Dalla classe Prodotto dello Shop,creare le sottoclassi opportune di  prodotti
 
     Acqua (massimo 1.5L)
     Sacchetto di Frutta a pezzi (al massimo puo contenere 5 pezzi di frutta)
@@ -61,4 +72,3 @@ i metodi della classe generica prodotto e quelli più specifici vengono richiama
 siano disponibili nel vostro programma
 */
 
--

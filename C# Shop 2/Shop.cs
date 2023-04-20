@@ -17,7 +17,7 @@ namespace C__Shop_2
         private string address;
         private int civicNumber;
         private string type;
-        private List<itemShop> itemsInShop;
+        private List<Prodotto> itemsInShop;
 
         // COSTRUTTORE
 
@@ -28,7 +28,7 @@ namespace C__Shop_2
             this.address = address;
             this.civicNumber = civicNumber;
             this.type = type;
-            this.itemsInShop = new List<itemShop>();
+            this.itemsInShop = new List<Prodotto>();
         }
 
         // GETTERS
@@ -53,7 +53,7 @@ namespace C__Shop_2
             return this.civicNumber;
         }
 
-        public List<itemShop> GetShopList()
+        public List<Prodotto> GetShopList()
         {
             return this.itemsInShop;
         }
@@ -67,16 +67,16 @@ namespace C__Shop_2
 
         // METODI
 
-        public void addItem(itemShop newItemShop)
+        public void addItem(Prodotto newItemShop)
         {
             itemsInShop.Add(newItemShop);
         }
 
-        public void AddListItems(List<itemShop> newItems)
+        public void AddListItems(List<Prodotto> newItems)
         {
             //itemShop = (List<itemShop>)itemShop.Concat(newItems);
 
-            foreach (itemShop itemScansionato in newItems)
+            foreach (Prodotto itemScansionato in newItems)
             {
                 itemsInShop.Add(itemScansionato);
             }
@@ -89,9 +89,9 @@ namespace C__Shop_2
             rapprInfoShop += "All'indirizzo: " + this.address + "\n";
             rapprInfoShop += "Numero civico: " + this.civicNumber + "\n";
             rapprInfoShop += "Lista prodotti trattati: " + "\n";
-            foreach (itemShop itemScansionato in itemsInShop)
+            foreach (Prodotto itemScansionato in itemsInShop)
             {
-                rapprInfoShop += " - " + itemScansionato.GetItemString() + "\n";
+                rapprInfoShop += " - " + itemScansionato.StampaProdotto() + "\n";
             }
             return rapprInfoShop;
 
